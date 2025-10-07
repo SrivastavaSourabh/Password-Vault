@@ -44,8 +44,8 @@ export default function PasswordGenerator() {
   const strength = generatedPassword ? calculatePasswordStrength(generatedPassword) : 0;
 
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 max-w-md mx-auto">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Password Generator</h2>
+    <div className="bg-white dark:bg-dark-800 rounded-lg shadow-md p-6 max-w-md mx-auto">
+      <h2 className="text-2xl font-bold text-gray-800 dark:text-white mb-6 text-center">Password Generator</h2>
       
       {/* Password Display */}
       <div className="mb-6">
@@ -54,7 +54,7 @@ export default function PasswordGenerator() {
             type="text"
             value={generatedPassword}
             readOnly
-            className="flex-1 px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-sm font-mono"
+            className="flex-1 px-3 py-2 border border-gray-300 dark:border-dark-600 rounded-md bg-gray-50 dark:bg-dark-700 text-sm font-mono text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-400"
             placeholder="Generated password will appear here"
           />
           <button
@@ -75,11 +75,11 @@ export default function PasswordGenerator() {
         {/* Password Strength Indicator */}
         {generatedPassword && (
           <div className="mb-2">
-            <div className="flex items-center justify-between text-sm text-gray-600 mb-1">
+            <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-300 mb-1">
               <span>Strength:</span>
               <span className="font-medium">{getStrengthLabel(strength)}</span>
             </div>
-            <div className="w-full bg-gray-200 rounded-full h-2">
+            <div className="w-full bg-gray-200 dark:bg-dark-700 rounded-full h-2">
               <div
                 className={`h-2 rounded-full transition-all duration-300 ${getStrengthColor(strength)}`}
                 style={{ width: `${(strength / 5) * 100}%` }}
@@ -91,7 +91,7 @@ export default function PasswordGenerator() {
 
       {/* Length Slider */}
       <div className="mb-4">
-        <label className="block text-sm font-medium text-gray-700 mb-2">
+        <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
           Length: {options.length}
         </label>
         <input
@@ -113,7 +113,7 @@ export default function PasswordGenerator() {
             onChange={(e) => setOptions({ ...options, includeLetters: e.target.checked })}
             className="mr-2"
           />
-          <span className="text-sm text-gray-700">Include letters (a-z, A-Z)</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">Include letters (a-z, A-Z)</span>
         </label>
         
         <label className="flex items-center">
@@ -123,7 +123,7 @@ export default function PasswordGenerator() {
             onChange={(e) => setOptions({ ...options, includeNumbers: e.target.checked })}
             className="mr-2"
           />
-          <span className="text-sm text-gray-700">Include numbers (0-9)</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">Include numbers (0-9)</span>
         </label>
         
         <label className="flex items-center">
@@ -133,7 +133,7 @@ export default function PasswordGenerator() {
             onChange={(e) => setOptions({ ...options, includeSymbols: e.target.checked })}
             className="mr-2"
           />
-          <span className="text-sm text-gray-700">Include symbols (!@#$%^&*)</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">Include symbols (!@#$%^&*)</span>
         </label>
         
         <label className="flex items-center">
@@ -143,7 +143,7 @@ export default function PasswordGenerator() {
             onChange={(e) => setOptions({ ...options, excludeLookAlikes: e.target.checked })}
             className="mr-2"
           />
-          <span className="text-sm text-gray-700">Exclude look-alike characters (l, 1, I, O, 0)</span>
+          <span className="text-sm text-gray-700 dark:text-gray-300">Exclude look-alike characters (l, 1, I, O, 0)</span>
         </label>
       </div>
 

@@ -1,0 +1,8 @@
+{
+  "/_not-found/page": "/_not-found",
+  "/api/auth/login/route": "/api/auth/login",
+  "/api/auth/register/route": "/api/auth/register",
+  "/api/vault/route": "/api/vault",
+  "/api/vault/[id]/route": "/api/vault/[id]",
+  "/page": "/"
+}
